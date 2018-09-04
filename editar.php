@@ -1,26 +1,3 @@
-<?php
-	include_once("conexao.php");
-	session_start();
-?>
-
-<?php 
-			
-
-			$codigo = filter_input(INPUT_GET, 'codigo', FILTER_SANITIZE_NUMBER_INT);
-			$_SESSION['codigo'] = $codigo;
-
-
-			$query = mysql_query("SELECT * FROM usuarios WHERE codigo = '$codigo' ");
-
-			while($registros = $query-> fetch_assoc()):
-				$codigo = $rgistros['codigo'];
-				$nome = $registros['nome'];
-				$email = $registros['email'];
-				$senha = $registros['senha'];
-			endwhile;
-
-?>
-		
 
 <!DOCTYPE html>
 <html>
